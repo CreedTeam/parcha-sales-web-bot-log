@@ -28,6 +28,10 @@ body {
     animation: fadeIn 0.5s ease-out; /* анимация появления */
 }
 
+h2 {
+    color: #007ACC;
+}
+
 /* Анимация появления */
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(-20px);}
@@ -98,3 +102,4 @@ button:hover {
         padding: 30px 20px;
     }
 }
+
