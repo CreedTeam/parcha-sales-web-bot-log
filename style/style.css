@@ -28,9 +28,6 @@ body {
     animation: fadeIn 0.5s ease-out; /* анимация появления */
 }
 
-h2 {
-    color: #007ACC;
-}
 
 /* Анимация появления */
 @keyframes fadeIn {
@@ -42,7 +39,7 @@ h2 {
 .container h2 {
     text-align: center;
     margin-bottom: 25px;
-    color: #333; /* темный заголовок */
+    ccolor: #007ACC;/* темный заголовок */
 }
 
 /* Форма */
@@ -102,4 +99,5 @@ button:hover {
         padding: 30px 20px;
     }
 }
+
 
