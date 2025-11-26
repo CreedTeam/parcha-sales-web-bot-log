@@ -39,7 +39,7 @@ body {
 .container h2 {
     text-align: center;
     margin-bottom: 25px;
-    ccolor: #007ACC;/* темный заголовок */
+    color: #007ACC;/* темный заголовок */
 }
 
 /* Форма */
@@ -99,5 +99,6 @@ button:hover {
         padding: 30px 20px;
     }
 }
+
 
 
