@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* на всю высоту экрана */
+    background: #f0f2f5; /* твой основной фон */
+    padding: 20px;
+}
+
+/* Контейнер формы */
+.container {
+    background: #fff; /* фон контейнера */
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease-out; /* анимация появления */
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+/* Заголовок */
+.container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333; /* темный заголовок */
+}
+
+/* Форма */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Лейблы */
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Поля ввода */
+input {
+    margin-top: 5px;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff;
+    color: #333;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #007ACC; /* цвет при фокусе */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 122, 204, 0.4);
+}
+
+/* Кнопка */
+button {
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #007ACC; /* синий */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #005EA3; /* темнее при наведении */
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+}
