@@ -28,7 +28,6 @@ body {
     animation: fadeIn 0.5s ease-out; /* анимация появления */
 }
 
-
 /* Анимация появления */
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(-20px);}
@@ -39,7 +38,7 @@ body {
 .container h2 {
     text-align: center;
     margin-bottom: 25px;
-    color: #007ACC;/* темный заголовок */
+    color:#007ACC ; /* темный заголовок */
 }
 
 /* Форма */
@@ -93,12 +92,45 @@ button:hover {
     background-color: #005EA3; /* темнее при наведении */
 }
 
+
+.statusBox {
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 14px;
+    display: none;
+}
+
+.statusBox.loading {
+    display: block;
+    background: #eaeaea;
+    color: #555;
+}
+
+.statusBox.success {
+    display: block;
+    background: #d4ffd5;
+    color: #1a7f1a;
+    border: 1px solid #4bc44b;
+}
+
+.statusBox.error {
+    display: block;
+    background: #ffd4d4;
+    color: #b71c1c;
+    border: 1px solid #e44a4a;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
 /* Адаптив */
 @media (max-width: 480px) {
     .container {
         padding: 30px 20px;
     }
 }
-
-
-
