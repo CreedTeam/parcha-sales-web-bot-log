@@ -12,43 +12,43 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* на всю высоту экрана */
-    background: #f0f2f5; /* твой основной фон */
+    min-height: 100vh; 
+    background: #f0f2f5; 
     padding: 20px;
 }
 
-/* Контейнер формы */
+
 .container {
-    background: #fff; /* фон контейнера */
+    background: #fff; 
     padding: 40px 30px;
     border-radius: 12px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     width: 100%;
     max-width: 400px;
-    animation: fadeIn 0.5s ease-out; /* анимация появления */
+    animation: fadeIn 0.5s ease-out; 
 }
 
-/* Анимация появления */
+
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(-20px);}
     100% { opacity: 1; transform: translateY(0);}
 }
 
-/* Заголовок */
+
 .container h2 {
     text-align: center;
     margin-bottom: 25px;
-    color:#007ACC ; /* темный заголовок */
+    color:#007ACC ; 
 }
 
-/* Форма */
+
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Лейблы */
+
 label {
     display: flex;
     flex-direction: column;
@@ -56,7 +56,7 @@ label {
     color: #555;
 }
 
-/* Поля ввода */
+
 input {
     margin-top: 5px;
     padding: 12px 14px;
@@ -69,16 +69,16 @@ input {
 }
 
 input:focus {
-    border-color: #007ACC; /* цвет при фокусе */
+    border-color: #007ACC; 
     outline: none;
     box-shadow: 0 0 8px rgba(0, 122, 204, 0.4);
 }
 
-/* Кнопка */
+
 button {
     margin-top: 10px;
     padding: 12px;
-    background-color: #007ACC; /* синий */
+    background-color: #007ACC;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -89,7 +89,7 @@ button {
 }
 
 button:hover {
-    background-color: #005EA3; /* темнее при наведении */
+    background-color: #005EA3; 
 }
 
 
@@ -128,7 +128,53 @@ button:hover {
 }
 
 
-/* Адаптив */
+#orgSelect {
+    margin-top: 5px;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 14px center;
+    background-size: 12px;
+    color: #333;
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+
+#orgSelect:focus {
+    border-color: #007ACC;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 122, 204, 0.4);
+}
+
+
+#orgSelect:hover {
+    border-color: #007ACC;
+}
+
+
+#orgSelect option {
+    padding: 10px;
+    background: #fff;
+    color: #333;
+}
+
+
+#orgSelect:invalid,
+#orgSelect option[value=""] {
+    color: #999;
+}
+
+
+#orgSelect option:not([value=""]) {
+    color: #333;
+}
+
+
 @media (max-width: 480px) {
     .container {
         padding: 30px 20px;
