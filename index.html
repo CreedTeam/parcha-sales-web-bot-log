@@ -9,7 +9,7 @@
 <body>
 
     <div class="container">
-        <h2> Parcha Sales</h2>
+        <h2>Parcha Sales</h2>
 
         <form class="form">
             <label>
@@ -18,8 +18,15 @@
             </label>
 
             <label>
-                Организация:
-                <input type="text" id="inpOrg" name="organization" placeholder="Введите название организации" required />
+                Ваша организация:
+                <input type="text" id="inpOrg" name="organization" placeholder="Введите организацию" required />
+            </label>
+
+            <label>
+                Партнёры:
+                <select id="orgSelect" name="targetOrganization" required>
+                    <option value="">Загрузка...</option>
+                </select>
             </label>
 
             <label>
