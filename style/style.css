@@ -1,182 +1,175 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    background: #f0f2f5; 
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  padding: 20px;
 }
-
 
 .container {
-    background: #fff; 
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 400px;
-    animation: fadeIn 0.5s ease-out; 
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.5s ease-out;
 }
-
 
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(-20px);}
-    100% { opacity: 1; transform: translateY(0);}
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 
 .container h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color:#007ACC ; 
+  text-align: center;
+  margin-bottom: 25px;
+  color: #007acc;
 }
-
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-
 
 label {
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    color: #555;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #555;
 }
 
-
 input {
-    margin-top: 5px;
-    padding: 12px 14px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    background: #fff;
-    color: #333;
-    transition: 0.3s;
+  margin-top: 5px;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+  color: #333;
+  transition: 0.3s;
 }
 
 input:focus {
-    border-color: #007ACC; 
-    outline: none;
-    box-shadow: 0 0 8px rgba(0, 122, 204, 0.4);
+  border-color: #007acc;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 122, 204, 0.4);
 }
 
-
 button {
-    margin-top: 10px;
-    padding: 12px;
-    background-color: #007ACC;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #007acc;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
-    background-color: #005EA3; 
+  background-color: #005ea3;
 }
 
-
 .statusBox {
-    margin-top: 15px;
-    padding: 10px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 14px;
-    display: none;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
 }
 
 .statusBox.loading {
-    display: block;
-    background: #eaeaea;
-    color: #555;
+  display: block;
+  background: #eaeaea;
+  color: #555;
 }
 
 .statusBox.success {
-    display: block;
-    background: #d4ffd5;
-    color: #1a7f1a;
-    border: 1px solid #4bc44b;
+  display: block;
+  background: #d4ffd5;
+  color: #1a7f1a;
+  border: 1px solid #4bc44b;
 }
 
 .statusBox.error {
-    display: block;
-    background: #ffd4d4;
-    color: #b71c1c;
-    border: 1px solid #e44a4a;
+  display: block;
+  background: #ffd4d4;
+  color: #b71c1c;
+  border: 1px solid #e44a4a;
 }
 
 .btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
-
 
 #orgSelect {
-    margin-top: 5px;
-    padding: 12px 14px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 14px center;
-    background-size: 12px;
-    color: #333;
-    appearance: none; 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-    transition: all 0.3s;
+  margin-top: 5px;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M1 1l5 5 5-5'/%3E%3C/svg%3E")
+    no-repeat right 14px center;
+  background-size: 12px;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: all 0.3s;
 }
-
 
 #orgSelect:focus {
-    border-color: #007ACC;
-    outline: none;
-    box-shadow: 0 0 8px rgba(0, 122, 204, 0.4);
+  border-color: #007acc;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 122, 204, 0.4);
 }
-
 
 #orgSelect:hover {
-    border-color: #007ACC;
+  border-color: #007acc;
 }
-
 
 #orgSelect option {
-    padding: 10px;
-    background: #fff;
-    color: #333;
+  padding: 10px;
+  background: #fff;
+  color: #333;
 }
-
 
 #orgSelect:invalid,
 #orgSelect option[value=""] {
-    color: #999;
+  color: #999;
 }
-
 
 #orgSelect option:not([value=""]) {
-    color: #333;
+  color: #333;
 }
 
-
 @media (max-width: 480px) {
-    .container {
-        padding: 30px 20px;
-    }
+  .container {
+    padding: 30px 20px;
+  }
 }
