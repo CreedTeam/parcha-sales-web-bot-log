@@ -15,7 +15,7 @@ form.appendChild(statusBox);
 
 
 async function loadOrganizationsSelect() {
-    orgSelect.innerHTML = '<option value="">Загрузка организаций...</option>';
+    orgSelect.innerHTML = '<option value="">Загрузка партнёров...</option>';
 
     try {
         const res = await fetch("https://9c97a9ac3d5f.ngrok-free.app/orgs/", {
