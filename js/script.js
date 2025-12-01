@@ -9,9 +9,20 @@ const orgSelect = document.querySelector("#orgSelect");
 const btn = document.querySelector(".btn");
 
 
+function getQueryParam(name) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(name);
+}
+
+const userUsername = getQueryParam("username") || "UNKNOWN_USER";
+console.log("USERNAME:", userUsername);
+
+
+
 const statusBox = document.createElement("div");
 statusBox.className = "statusBox";
 form.appendChild(statusBox);
+
 
 
 async function loadOrganizationsSelect() {
@@ -33,7 +44,6 @@ async function loadOrganizationsSelect() {
         const data = await res.json();
         console.log("Ответ от /orgs/:", data);
 
-        
         orgSelect.innerHTML = '<option value="">Выберите партнёра</option>';
 
         if (!Array.isArray(data) || data.length === 0) {
@@ -41,19 +51,14 @@ async function loadOrganizationsSelect() {
             return;
         }
 
-        
         data.forEach(item => {
             if (item.org && item.name) {
                 const opt = document.createElement("option");
-                opt.value = item.name.trim();           
-                opt.textContent = item.org.trim();      
+                opt.value = item.name.trim();
+                opt.textContent = item.org.trim();
                 orgSelect.appendChild(opt);
             }
         });
-
-        if (orgSelect.options.length === 1) {
-            orgSelect.innerHTML = '<option value="">Партнёр есть, но нет полей org/name</option>';
-        }
 
     } catch (err) {
         console.error("Ошибка загрузки партнёров:", err);
@@ -65,12 +70,13 @@ async function loadOrganizationsSelect() {
 loadOrganizationsSelect();
 
 
+
 form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const name = inpName.value.trim();
     const fromOrg = inpOrg.value.trim();
-    const toOrg = orgSelect.value.trim();   
+    const toOrg = orgSelect.value.trim();
     const phone = tel.value.trim();
     const address = inpAdr.value.trim();
 
@@ -83,16 +89,15 @@ form.addEventListener("submit", async function (e) {
     btn.textContent = "Отправка...";
     showStatus("Отправляем заявку...", "loading");
 
-    showStatus("Отправляем заявку...", "loading");
-
     try {
         const res = await fetch("https://d1f78273c152.ngrok-free.app/report/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
+                username: userUsername,  
                 name,
                 fromOrganization: fromOrg,
-                toOrganization: toOrg,      
+                toOrganization: toOrg,
                 phone,
                 address
             })
@@ -117,8 +122,8 @@ form.addEventListener("submit", async function (e) {
 });
 
 
+
 function showStatus(message, type = "info") {
-    statusBox.textContent = message;
     statusBox.textContent = message;
     statusBox.className = `statusBox ${type}`;
 
@@ -130,4 +135,3 @@ function showStatus(message, type = "info") {
         }, 5000);
     }
 }
-
