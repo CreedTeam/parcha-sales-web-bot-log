@@ -29,7 +29,7 @@ async function loadOrganizationsSelect() {
     orgSelect.innerHTML = '<option value="">Загрузка партнёров...</option>';
 
     try {
-        const res = await fetch("https://d1f78273c152.ngrok-free.app/orgs/", {
+        const res = await fetch("https://recently-onion-travel-walk.trycloudflare.com/orgs/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ action: "list" })
@@ -90,7 +90,7 @@ form.addEventListener("submit", async function (e) {
     showStatus("Отправляем заявку...", "loading");
 
     try {
-        const res = await fetch("https://d1f78273c152.ngrok-free.app/report/", {
+        const res = await fetch("https://recently-onion-travel-walk.trycloudflare.com/report/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
