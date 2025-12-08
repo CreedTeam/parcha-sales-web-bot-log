@@ -9,13 +9,13 @@ const orgSelect = document.querySelector("#orgSelect");
 const btn = document.querySelector(".btn");
 
 
-function getQueryParam(name) {
+function getQueryParam(pk_key) {
     const url = new URL(window.location.href);
-    return url.searchParams.get(name);
+    return url.searchParams.get(pk_key);
 }
 
 const userUsername = getQueryParam("username") || "UNKNOWN_USER";
-console.log("USERNAME:", userUsername);
+
 
 
 
@@ -52,9 +52,9 @@ async function loadOrganizationsSelect() {
         }
 
         data.forEach(item => {
-            if (item.org && item.name) {
+            if (item.org && item.pk_key) {
                 const opt = document.createElement("option");
-                opt.value = item.name.trim();
+                opt.value = item.pk_key.trim();
                 opt.textContent = item.org.trim();
                 orgSelect.appendChild(opt);
             }
